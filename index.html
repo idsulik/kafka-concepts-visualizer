@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8" />
+    <title>Kafka Concepts Visualizer</title>
+</head>
+<body>
+<div class="container">
+    <h1>Kafka Concepts Visualizer</h1>
+
+    <div class="controls">
+        <button onclick="addMessage()">Produce Message</button>
+        <button onclick="addConsumer()">Add Consumer</button>
+        <button onclick="removeConsumer()">Remove Consumer</button>
+    </div>
+
+    <div class="kafka-system">
+        <div class="topic">
+            <h3>Topic: "user-events"</h3>
+            <div class="partition" id="partition0">
+                <strong>Partition 0</strong>
+            </div>
+            <div class="partition" id="partition1">
+                <strong>Partition 1</strong>
+            </div>
+            <div class="partition" id="partition2">
+                <strong>Partition 2</strong>
+            </div>
+        </div>
+
+        <div class="consumer-group">
+            <h3>Consumer Group: "user-events-processor"</h3>
+            <div id="consumers">
+                <div class="consumer" id="consumer0">
+                    <strong>Consumer 1</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="explanation">
+        <h3>What's happening?</h3>
+        <p id="explanation">
+            ⚡ Click "Produce Message" to send messages to the topic.<br>
+            👥 Add or remove consumers to see how Kafka rebalances the workload.<br>
+            🔄 Messages are distributed across partitions and consumed by available consumers.<br>
+            💡 Note: Each partition can only be read by one consumer in a group!
+        </p>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
